@@ -10,7 +10,7 @@ const __dirname = getDirname(import.meta.url)
 
 export default defineUserConfig({
   // set site base to default value
-  base: '/',
+  base: '/lgutierrez.io/',
 
   // site-level locales config
   locales: {
