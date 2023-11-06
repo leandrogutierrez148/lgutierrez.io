@@ -6,8 +6,8 @@
   "author": "leandrogutierrez148@gmail.com",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
   },
   "devDependencies": {
     "@vuepress/plugin-docsearch": "^2.0.0-beta.67",
