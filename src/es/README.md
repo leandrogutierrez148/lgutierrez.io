@@ -5,7 +5,7 @@ icon: home
 title: Blog Inicio
 heroImage: /logo.svg
 heroImageDark: logo-white.svg
-heroText: El Blog de Leandro Gutierrez
+heroText: Blog de Leandro Gutierrez
 heroFullScreen: true
 projects:
   - icon: article

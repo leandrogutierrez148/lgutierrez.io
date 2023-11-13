@@ -7,7 +7,6 @@ export default hopeTheme({
 
   author: {
     name: "Leandro Gutierrez",
-    url: "https://github.com/leandrogutierrez148",
   },
 
   iconAssets: "fontawesome-with-brands",
@@ -15,15 +14,14 @@ export default hopeTheme({
   logo: "/logo.svg",
   logoDark: "/logo-white.svg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "leandrogutierrez148/leandrogutierrez148.github.io",
 
   docsDir: "src",
 
   blog: {
     medias: {
-      Linkedin: "https://example.com",
-      Twitter: "https://example.com",
-      Github: "https://example.com"
+      Linkedin: "https://www.linkedin.com/in/lgutierrez148/",
+      Github: "https://github.com/leandrogutierrez148"
     },
   },
 
