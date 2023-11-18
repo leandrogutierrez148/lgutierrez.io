@@ -5,4 +5,4 @@ cover: /assets/images/cover3.jpg
 
 # Introducción
 
-Escribe una introducción aquí.
+Hola, soy Leandro Gutiérrez. Bienvenidos a mi blog personal, donde compartiré una variedad de artículos relacionados con el desarrollo de software, ingeniería de datos, diseño y arquitectura de sistemas. 

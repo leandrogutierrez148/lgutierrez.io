@@ -5,4 +5,4 @@ cover: /assets/images/cover3.jpg
 
 # Intro Page
 
-Place your introduction and profile here.
+Hello, I'm Leandro Gutierrez. Welcome to my personal blog, where I'll be sharing a variety of articles related to software development, data engineering, design, and system architecture

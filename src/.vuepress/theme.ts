@@ -14,6 +14,10 @@ export default hopeTheme({
   logo: "/logo.svg",
   logoDark: "/logo-white.svg",
 
+  favicon: "/favicon-32x32.png",
+  
+  darkmode: "toggle",
+
   repo: "leandrogutierrez148/leandrogutierrez148.github.io",
 
   docsDir: "src",
