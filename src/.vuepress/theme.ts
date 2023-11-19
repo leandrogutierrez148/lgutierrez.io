@@ -16,7 +16,7 @@ export default hopeTheme({
 
   favicon: "/favicon-32x32.png",
   
-  darkmode: "",
+  darkmode: "toggle",
 
   repo: "leandrogutierrez148/leandrogutierrez148.github.io",
 
