@@ -16,7 +16,7 @@ export default hopeTheme({
 
   favicon: "/favicon-32x32.png",
   
-  darkmode: "toggle",
+  darkmode: "",
 
   repo: "leandrogutierrez148/leandrogutierrez148.github.io",
 
@@ -37,7 +37,7 @@ export default hopeTheme({
       // sidebar
       sidebar: enSidebar,
 
-      footer: "Default footer",
+      footer: "",
 
       displayFooter: true,
 
@@ -61,7 +61,7 @@ export default hopeTheme({
       // sidebar
       sidebar: esSidebar,
 
-      footer: "Footer por defecto",
+      footer: "",
 
       displayFooter: true,
 
