@@ -3,9 +3,9 @@ home: true
 layout: BlogHome
 icon: home
 title: Home
-heroImage: /logo.svg
+heroImage: logo.svg
 heroImageDark: logo-white.svg
-heroText: Blog de Leandro Gutierrez
+heroText: Leandro Gutierrez' Blog
 heroFullScreen: false
 projects:
 

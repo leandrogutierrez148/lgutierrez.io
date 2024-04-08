@@ -42,7 +42,6 @@ export default hopeTheme({
      displayFooter: true,
  
      blog: {
-       description: "Ingeniero en Computación",
        intro: "/intro.html",
      },
  

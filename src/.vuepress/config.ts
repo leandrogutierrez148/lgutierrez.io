@@ -1,5 +1,6 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
+import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 
 export default defineUserConfig({
   base: "/",
@@ -7,18 +8,20 @@ export default defineUserConfig({
   locales: {
     "/": {
         lang: "es-ES",
-        title: "Leandro Gutierrez",
         description: "Mi blog personal",
     },
     "/en/": {
         lang: "en-US",
-        title: "Leandro Gutierrez",
         description: "My personal blog",
     },
   },
 
   theme,
 
-  // Enable it with pwa
-  // shouldPrefetch: false,
+  plugins: [
+    googleAnalyticsPlugin({
+      id: 'G-2TP2ET82BT',
+    }),
+  ],
+
 });
