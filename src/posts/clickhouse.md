@@ -140,3 +140,5 @@ Si en una query utilizamos los siguientes filtros en la dondición WHERE, la pod
 Las tablas definidas con `ENGINE = Kafka` hacen las veces de consumidores de eventos en topics, y las cuales no sirven de almacenamiento permanente. 
 ### MaterializedViews
 En Clickhouse las vistas materializadas (MaterializedViews) funcionan como "triggers" de la tabla fuente de la consulta, es decir la db ofrece una funcionalidad reactiva ante nuevas filas. [Lectura](https://den-crane.github.io/Everything_you_should_know_about_materialized_views_commented.pdf)
+
+### [WIP]

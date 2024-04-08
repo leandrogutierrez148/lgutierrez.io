@@ -126,3 +126,4 @@ CREATE TABLE IF NOT EXISTS transactions (
 )
 INSERT INTO transactions VALUES (1,"2023-12-17 20:54:00", 100.50, "INC", 1)
 ```
+### [WIP]
