@@ -10,7 +10,7 @@ order: 1
 # Set author
 author: Leandro Gutierrez
 # Set writing time
-date: 2023-11-18
+date: 2024-04-01
 # A page can have multiple categories
 category:
   - Databases
@@ -160,3 +160,5 @@ If we use the following filters in the WHERE clause of a query, the initial prun
 Tables defined with ENGINE = Kafka act as event consumers in topics and do not serve as permanent storage.
 ## MaterializedViews
 In ClickHouse, MaterializedViews function as triggers for the source table of the query, meaning the database offers reactive functionality to new rows [Reading](https://den-crane.github.io/Everything_you_should_know_about_materialized_views_commented.pdf)
+
+### [WIP]
