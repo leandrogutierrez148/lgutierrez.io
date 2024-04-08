@@ -31,7 +31,7 @@ En este post vamos a ver una de las DBs OLAP que se jacta de permitirnos operar 
 <!-- more -->
 
 ## Clickhouse
-ClickHouse es un sistema de gestión de bases de datos (DBMS) SQL de alto rendimiento y orientado a columnas para procesamiento analítico en línea (OLAP). Está disponible tanto como software de código abierto como en una oferta en la nube.
+ClickHouse es un sistema de gestión de bases de datos (DBMS), con una interfaz SQL muy desarrollada, se auto definen como: de alto rendimiento y orientado a columnas para procesamiento analítico en línea (OLAP). Está disponible su version de código abierto, tambien releases de compañias que ofrecen de alguna manera soporte sobre sus versiones, así como también hay disponible ofertas IasS.
 
 ### ENGINE MergeTree
 1. Puede ser considerado el engine por defecto de Clickhouse.
