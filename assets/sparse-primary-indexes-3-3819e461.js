@@ -1,1 +1,0 @@
-const s="/assets/images/row-oriented.gif",e="/assets/images/column-oriented.gif",a="/assets/images/primarykeys.jpeg",i="/assets/images/sparse-primary-indexes.jpg",r="/assets/images/sparse-primary-indexes-2.jpg",t="/assets/images/sparse-primary-indexes-3.jpg";export{s as _,e as a,a as b,i as c,r as d,t as e};
