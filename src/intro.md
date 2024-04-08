@@ -3,6 +3,6 @@ icon: circle-info
 cover: /assets/images/cover3.jpg
 ---
 
-# Intro Page
+# Introducción
 
-Hello, I'm Leandro Gutierrez. Welcome to my personal blog, where I'll be sharing a variety of articles related to software development, data engineering, design, and system architecture
+Hola, soy Leandro Gutiérrez. Bienvenidos a mi blog personal, donde compartiré una variedad de artículos relacionados con el desarrollo de software, ingeniería de datos, diseño y arquitectura de sistemas. 

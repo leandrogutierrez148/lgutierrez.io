@@ -31,6 +31,27 @@ export default hopeTheme({
 
   locales: {
     "/": {
+     // navbar
+     navbar: esNavbar,
+ 
+     // sidebar
+     sidebar: esSidebar,
+ 
+     footer: "",
+ 
+     displayFooter: true,
+ 
+     blog: {
+       description: "Ingeniero en Computación",
+       intro: "/intro.html",
+     },
+ 
+     // page meta
+     metaLocales: {
+       editLink: "Editar esta pagina en Github",
+     },
+   },
+   "/en/": {
       // navbar
       navbar: enNavbar,
 
@@ -43,36 +64,11 @@ export default hopeTheme({
 
       blog: {
         description: "Software Engineer",
-        intro: "/intro.html",
+        intro: "/en/intro.html",
       },
 
       metaLocales: {
         editLink: "Edit this page on GitHub",
-      },
-    },
-
-    /**
-     * Español locale config
-     */
-    "/es/": {
-      // navbar
-      navbar: esNavbar,
-
-      // sidebar
-      sidebar: esSidebar,
-
-      footer: "",
-
-      displayFooter: true,
-
-      blog: {
-        description: "Ingeniero en Computación",
-        intro: "/es/intro.html",
-      },
-
-      // page meta
-      metaLocales: {
-        editLink: "Editar esta pagina en Github",
       },
     },
   },

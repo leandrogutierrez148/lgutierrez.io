@@ -6,14 +6,14 @@ export default defineUserConfig({
 
   locales: {
     "/": {
-      lang: "en-US",
-      title: "Leandro Gutierrez",
-      description: "My personal blog",
+        lang: "es-ES",
+        title: "Leandro Gutierrez",
+        description: "Mi blog personal",
     },
-    "/es/": {
-      lang: "es",
-      title: "Leandro Gutierrez",
-      description: "Mi blog personal",
+    "/en/": {
+        lang: "en-US",
+        title: "Leandro Gutierrez",
+        description: "My personal blog",
     },
   },
 
