@@ -29,7 +29,7 @@ Cuando se trata de agendar tareas programadas quizás lo primero que llega a nue
 <!-- more -->
 
 ## Airflow
-Airflow, es una plataforma open-source que permite desarrollar, agendar y monitorear tareas programadas, o como ellos mismos se denominan **un orquestador de tareas**. Desarrollado en Python, Airflow provee un framework para crear nuestras propios flujos de trabajo (**Workflows**), cuenta además con una amplia gama de integraciones con diversos sistemas, algunos oficiales y otros desarrollaros por terceros, vastamente aceptados por la comunidad, los cuales resuelven la mayoría de los casos de uso común.
+Airflow, es una plataforma open-source que permite desarrollar, agendar y monitorear tareas programadas, o como ellos mismos se denominan **un orquestador de tareas**. Desarrollado en Python, Airflow provee un framework para crear nuestras propios flujos de trabajo (**Workflows**), cuenta además con una amplia gama de integraciones con diversos sistemas, algunos oficiales y otros desarrollados por terceros, los cuales resuelven la mayoría de los casos de uso común.
 
 Al ser un framework de programación cuenta con las siguientes ventajas:
 - Los **Workflows** pueden ser versionados y controlados con herramientas como Git, permitiendo trabajar de manera colaborativa y en simultaneo.
