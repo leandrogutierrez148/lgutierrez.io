@@ -1,6 +1,6 @@
 ---
 # This is the title of the article
-title: 'Airflow: ¿adiós Cron?'
+title: 'Aire Fresco con Airflow: adiós Cron'
 # You can customize cover image
 cover: /assets/images/airflow.webp
 # This is the icon of the page
@@ -25,7 +25,7 @@ star: true
 
 disableCopy: true
 ---
-Cuando se trata de agendar tareas programadas quizás lo primero que llega a nuestra mente es el famoso servicio de sistemas Unix **Cron**, el cual permite definir una serie de comandos que deben ser ejecutados por nuestro **SO**. Periodicamente y de manera desatendida Cron despierta para ejecutar las tareas que le hayan sido programadas. Los tiempos modernos arribaron y las necesidades cada vez mayores de facilitar el desarrollo, despliegue y monitoreo de nuestras tareas arribaron con ellos. Hoy daremos un vistazo a Airflow y sus conceptos clave.
+Cuando se trata de agendar tareas programadas quizás lo primero que llega a nuestra mente es el famoso servicio de sistemas Unix **Cron**, el cual periodicamente y de manera desatendida despierta para ejecutar las tareas que le hayan sido programadas. Los tiempos modernos arribaron y las necesidades cada vez mayores de facilitar el desarrollo, despliegue y monitoreo de nuestras tareas arribaron con ellos. Hoy daremos un vistazo a Airflow y sus conceptos clave.
 <!-- more -->
 
 ## Airflow
