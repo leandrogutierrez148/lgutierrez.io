@@ -25,15 +25,14 @@ star: true
 
 disableCopy: true
 ---
-Cuando se trata de agendar tareas programadas quizás lo primero que llega a nuestra mente es el famoso servicio de sistemas Unix **Cron**, el cual periodicamente y de manera desatendida despierta para ejecutar las tareas que le hayan sido programadas. Los tiempos modernos arribaron y las necesidades cada vez mayores de facilitar el desarrollo, despliegue y monitoreo de nuestras tareas arribaron con ellos. Hoy daremos un vistazo a Airflow y sus conceptos clave.
+Cuando se trata de agendar tareas programadas quizás lo primero que llega a nuestra mente es el famoso servicio **Cron** de los sistemas Unix, el cual periodicamente y de manera desatendida despierta para ejecutar las tareas que le hayan sido programadas. Los tiempos modernos arribaron y las necesidades de facilitar el desarrollo, despliegue y monitoreo de nuestras tareas arribaron con ellos. Hoy daremos un vistazo a Airflow y sus conceptos clave.
 <!-- more -->
 
 ## Airflow
-Airflow, es una plataforma open-source que permite desarrollar, agendar y monitorizar tareas programadas, o como ellos mismos se denominan **un orquestador de tareas programadas**. Desarrollado en Python, Airflow provee un framework para crear nuestras propias cargas de trabajo (**Workflows**), además de una amplia gama de integraciones de terceras partes, algunos oficiales y otros vastamente aceptados por la comunidad, resuelven la mayoría de los casos de uso común.
+Airflow, es una plataforma open-source que permite desarrollar, agendar y monitorear tareas programadas, o como ellos mismos se denominan **un orquestador de tareas**. Desarrollado en Python, Airflow provee un framework para crear nuestras propios flujos de trabajo (**Workflows**), cuenta además con una amplia gama de integraciones con diversos sistemas, algunos oficiales y otros desarrollaros por terceros, vastamente aceptados por la comunidad, los cuales resuelven la mayoría de los casos de uso común.
 
 Al ser un framework de programación cuenta con las siguientes ventajas:
-- Los **Workflows** pueden ser versionados y controlados con herramientas como Git, lo cual permite tener control de cada versión desplegada.
-- Los **Workflows** pueden ser trabajados de manera colaborativa en simultaneo.
+- Los **Workflows** pueden ser versionados y controlados con herramientas como Git, permitiendo trabajar de manera colaborativa y en simultaneo.
 - Se pueden escribir **Tests** para validaciones.
 - Los componentes son extensibles y podemos desarrollar nuestra propias implementaciones.
 
@@ -44,15 +43,15 @@ Su arquitecutra distribuida comprende multiples componentes:
 - **Scheduler**: es el encargado de lanzar los workflows programados y de coordinar cada una de las tareas que se deben ejecutar.
 - **WebUI**: interfaz de monitoreo, lanzamineto y debugueo de nuestros DAGs.
 - **Worker**: es quien efectivamente realiza las tareas provistas por el Scheduler. En instalaciones básicas es parte del Scheduler.
-- **DAGs folder**: carpeta leida por el Scheduler para levantar y programar las tareas.
-- **Metadata database**: en ella Airflow almacena los estados de las ejecuciones.
+- **DAGs folder**: carpeta leida por el Scheduler para levantar y agendar las tareas.
+- **Metadata database**: en ella Airflow almacena los estados de las ejecuciones y otros metadatos.
 
 ![airflow-arch.png](/assets/images/airflow-arch.png)
 
 ### Workflow
-El concepto **Workflow** es modelado como un **DAG** (Grafo Asiclico Direccionado), es decir no forma bucles y su final de ejecución está garantizado. Cada nodo del grafo se representa una tarea a realizar. Estos **Tasks** pueden ser componentes estandares llamados **Operators**, como un HttpApiCliente o BashExecutor; o bien pueden ser funciones Python con la flexibilidad casi infinita que eso implica. 
+El concepto **Workflow** es modelado como un **DAG** (Grafo Asiclico Direccionado), es decir no forma bucles y su final de ejecución está garantizado. Cada nodo del grafo se representa una tarea a realizar. Estos **Tasks** pueden ser componentes estandares, llamados **Operators**, como un HttpApiCliente o BashExecutor; o bien pueden ser funciones Python definidas por el usuario, con la flexibilidad casi infinita que eso implica. 
 
-Un **DAG** define la dependencia entre nuestros **Tasks**, y define la secuencia de ejecución de los mismos. Mientras que un **Task** define que se está haciendo.
+Un **DAG** define las dependencias entre nuestros **Tasks** y la secuencia de ejecución de los mismos. Mientras que un **Task** define que se está haciendo.
 
 ![airflow-dag.png](/assets/images/airflow-dag.png)
 
@@ -72,7 +71,7 @@ import datetime
  ):
      EmptyOperator(task_id="task")
 ```
-- **Constructor standard**, pasando el DAG a cada operador utilizado:
+- **Constructor standard**, pasando el DAG en cada instanciación de un operador:
 ```python
  import datetime
 
@@ -103,17 +102,17 @@ generate_dag()
 
 ### Tasks
 Asimismo existen tres formas de definir un **Task**:
-- **Operators**: casos de uso común que se standarizaron para facilitar nuestro trabajo. Muchos de ellos vienen integrados otros son desarrollados por terceras partes y deben ser instalados a mano. Ejemplos:
+- **Operators**: casos de uso común que se standarizaron para facilitar nuestro trabajo. Muchos de ellos vienen integrados, otros son desarrollados por terceras partes y deben ser instalados como dependencias. Ejemplos:
   - HttpOperator
   - MySqlOperator
   - PostgresOperator
   - SlackAPIOperator
-- **Sensors**: son una subclase especial de **Operators** que funcionan como hooks.
+- **Sensors**: son una subclase especial de **Operators** que funcionan como hooks asícronos.
 - **Taskflow API**: funciones Python decoradas con *@Task* decorator
 
-Tras bambalinas todas son subclases de *BaseOperator* y los conceptos de **Task** y **Operator** son en cierta manera intercambiables.
+Tras bambalinas todas son subclases de **BaseOperator**, por lo tanto los conceptos de **Task** y **Operator** son intercambiables.
 
-Por ejemplo si quisieramos checkear el estado de una API podriamos utilizar un SimpleHttpOperator, componente base distribuido por la plataforma, o podemos desarrollar nuestra propia función en Python en la cual , ambos caminos son validos.
+Por ejemplo si quisieramos checkear el estado de una API podriamos utilizar un SimpleHttpOperator, componente base distribuido por la plataforma, o podemos desarrollar nuestra propia función en Python en la cual hacemos uso del paquete *requests*, ambos caminos son validos.
 
 ```python
 with DAG(
@@ -166,7 +165,7 @@ def check_api():
 check_api()
 ```
 ### Control de flujo
-El flujo de ejecución de nuestro **DAG** se definen con dependencias upstreams y downstrems. Conviven hoy dos maneras de definir estas dependencias, la primera mediante el uso de los operadores **>>** y **<<**, y la segunda con los metodos **set_upstream** y **set_downstream**.
+El flujo de ejecución de nuestro **DAG** se definen mediante el seteo de dependencias *upstreams* y *downstrems*. Conviven hoy dos maneras de definir estas dependencias, la primera mediante el uso de los operadores **>>** y **<<**, y la segunda con los metodos **set_upstream** y **set_downstream**.
 ```python
 first_task >> [second_task, third_task]
 third_task << fourth_task
@@ -179,11 +178,11 @@ third_task.set_upstream(fourth_task)
 
 Estas dependencias representan las *aristas* en nuestros grafos y definen el orden en que Airflow ejecutará las tareas. Por defecto un Task esperará que todos sus *upstreams* se ejecuten correctamente antes de correr (este comportamiento puede modificarse según necesitemos).
 
-Un punto importante en Airflow es que no es un sistema de ETL, por lo que no está diseñado para intercambiar grandes volumenes de datos entre tareas. Esto debe ser tenido en cuenta al momento de programar nuestros DAGs.
+Un punto importante en Airflow es que no es una plataforma de ETL, sino como mencionamos anteriormente es un gestor de cargas de trabajo, por lo que no está diseñado para intercambiar grandes volumenes de datos entre tareas. Esto debe ser tenido en cuenta al momento de programar nuestros DAGs.
 
 Para intercambiar información entre nuestras Tasks se emplean tres metodos:
-- XComs (Cross-communications): mecanismo por el cual nuestras tareas envian y reciben pequeñas bloques de información.
-- Servicios de almacenamiento externo: es la mejor manera de intercambiar grandes volumenes de información, cada tarea debe encargarse de pullear y pushear la información que desea transferir o procesar.
+- XComs (Cross-communications): mecanismo por el cual nuestras tareas envian y reciben pequeños bloques de información.
+- Servicios de almacenamiento externo: es la mejor manera de intercambiar grandes volumenes de información, cada tarea debe encargarse de pullear y pushear la información que desea procesar o transferir.
 - TaskFlow: la API automaticamente inyecta la salida de nuestro Task a la siguiente etapa, haciendo uso de XComs implícitos. De nuevo no es recomendado para grandes volumenes de datos.
 
 ### Casos de uso
