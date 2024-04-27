@@ -1,8 +1,8 @@
 ---
 # This is the title of the article
-title: 'Aire Fresco con Airflow: adiós Cron'
+title: 'Buenos Aires: Good Airflow'
 # You can customize cover image
-cover: /assets/images/airflow.webp
+cover: /assets/images/pipeline.jpeg
 # This is the icon of the page
 icon: file
 # This control sidebar order
