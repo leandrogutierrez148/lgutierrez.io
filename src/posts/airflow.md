@@ -25,8 +25,10 @@ star: true
 
 disableCopy: true
 ---
-Cuando se trata de agendar tareas programadas quizás lo primero que llega a nuestra mente es el famoso servicio **Cron** de los sistemas Unix, el cual periodicamente y de manera desatendida despierta para ejecutar las tareas que le hayan sido asignadas. Los tiempos modernos arribaron y las necesidades de facilitar el desarrollo, despliegue y monitoreo de nuestras tareas arribaron con ellos. Hoy daremos un vistazo a Airflow y sus conceptos clave.
+Algunas de las funciones principales de un ingeniero de datos son el obtener, transformar y mover información de un punto a otro, sumado esto a las impactantes cantidades de datos que son generadas en la actualidad, se torna imprecindible la estandarización en la definición, implementacion y administración de estos flujos de trabajo, o como solemos llamarles pipelines, compreden un set de tareas a ejecutarse en un cierto orden y con una determinada frecuencia.
 <!-- more -->
+
+Cuando se trata de agendar tareas programadas quizás lo primero que llega a nuestra mente es el famoso servicio Cron de los sistemas Unix, el cual periodicamente y de manera desatendida despierta para ejecutar las tareas que le hayan sido asignadas. Los tiempos modernos arribaron y las necesidades de facilitar el desarrollo, despliegue y monitoreo de nuestras flujos de trabajo arribaron con ellos. Hoy daremos un vistazo a Apache Airflow y sus conceptos clave.
 
 ## Airflow
 Airflow, es una plataforma open-source que permite desarrollar, agendar y monitorear tareas programadas, o como ellos mismos se denominan **un orquestador de flujos de trabajo orientado a procesos batch**. Desarrollado en Python, Airflow provee un framework para crear nuestras propios flujos de trabajo (**Workflows**), cuenta además con una amplia gama de integraciones con diversos sistemas, algunos oficiales y otros desarrollados por terceros, los cuales resuelven la mayoría de los casos de uso común.
@@ -195,7 +197,7 @@ Para intercambiar información entre nuestras Tasks se emplean tres metodos:
 ### Casos de uso
 Airflow está pensado para tareas **batch** asíncronas
 Los casos de uso mas común son:
-- Checkeos keep-alive
+- Checkeos de tipo keep-alive
 - Controles de calidad de datos
 - Pre agregaciones
-- Accionar contra un servicio
+- Ejecutar acciones remotas contra un servicio
