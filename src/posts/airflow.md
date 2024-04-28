@@ -25,11 +25,11 @@ star: true
 
 disableCopy: true
 ---
-Cuando se trata de agendar tareas programadas quizás lo primero que llega a nuestra mente es el famoso servicio **Cron** de los sistemas Unix, el cual periodicamente y de manera desatendida despierta para ejecutar las tareas que le hayan sido programadas. Los tiempos modernos arribaron y las necesidades de facilitar el desarrollo, despliegue y monitoreo de nuestras tareas arribaron con ellos. Hoy daremos un vistazo a Airflow y sus conceptos clave.
+Cuando se trata de agendar tareas programadas quizás lo primero que llega a nuestra mente es el famoso servicio **Cron** de los sistemas Unix, el cual periodicamente y de manera desatendida despierta para ejecutar las tareas que le hayan sido asignadas. Los tiempos modernos arribaron y las necesidades de facilitar el desarrollo, despliegue y monitoreo de nuestras tareas arribaron con ellos. Hoy daremos un vistazo a Airflow y sus conceptos clave.
 <!-- more -->
 
 ## Airflow
-Airflow, es una plataforma open-source que permite desarrollar, agendar y monitorear tareas programadas, o como ellos mismos se denominan **un orquestador de tareas**. Desarrollado en Python, Airflow provee un framework para crear nuestras propios flujos de trabajo (**Workflows**), cuenta además con una amplia gama de integraciones con diversos sistemas, algunos oficiales y otros desarrollados por terceros, los cuales resuelven la mayoría de los casos de uso común.
+Airflow, es una plataforma open-source que permite desarrollar, agendar y monitorear tareas programadas, o como ellos mismos se denominan **un orquestador de flujos de trabajo orientado a procesos batch**. Desarrollado en Python, Airflow provee un framework para crear nuestras propios flujos de trabajo (**Workflows**), cuenta además con una amplia gama de integraciones con diversos sistemas, algunos oficiales y otros desarrollados por terceros, los cuales resuelven la mayoría de los casos de uso común.
 
 Al ser un framework de programación cuenta con las siguientes ventajas:
 - Los **Workflows** pueden ser versionados y controlados con herramientas como Git, permitiendo trabajar de manera colaborativa y en simultaneo.
@@ -48,6 +48,13 @@ Su arquitecutra distribuida comprende multiples componentes:
 
 ![airflow-arch.png](/assets/images/airflow-arch.png)
 
+Existen otros componentes opcionales que pueden ser habilitados para mejorar escalabilidad y performance del stack:
+- **Triggerer**
+- **Dag processor**
+- **Plugins folder**
+  
+[componentes opcionales](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/overview.html#optional-components)
+
 ### Workflow
 El concepto **Workflow** es modelado como un **DAG** (Grafo Asiclico Direccionado), es decir no forma bucles y su final de ejecución está garantizado. Cada nodo del grafo se representa una tarea a realizar. Estos **Tasks** pueden ser componentes estandares, llamados **Operators**, como un HttpApiCliente o BashExecutor; o bien pueden ser funciones Python definidas por el usuario, con la flexibilidad casi infinita que eso implica. 
 
@@ -57,35 +64,35 @@ Un **DAG** define las dependencias entre nuestros **Tasks** y la secuencia de ej
 
 ### Declarando nuestro DAG
 Existen múltiples maneras de declarar nuestro DAG:
-- **Context Manager**, el cual inyectará el DAG a cualquiera de las tareas definidas dentro del contexto:
+- Utilizando el **Context Manager**, el cual inyectará el DAG a cualquiera de las tareas definidas dentro del contexto:
 ```python
 import datetime
 
- from airflow import DAG
- from airflow.operators.empty import EmptyOperator
+from airflow import DAG
+from airflow.operators.empty import EmptyOperator
 
- with DAG(
-     dag_id="dag_id",
-     start_date=datetime.datetime(2021, 1, 1),
-     schedule="@daily",
- ):
-     EmptyOperator(task_id="task")
+with DAG(
+    dag_id="dag_id",
+    start_date=datetime.datetime(2021, 1, 1),
+    schedule="@daily",
+):
+    EmptyOperator(task_id="task")
 ```
-- **Constructor standard**, pasando el DAG en cada instanciación de un operador:
+- Inyectando el DAG en cada instanciación de una tarea mediante el **Constructor standard** :
 ```python
- import datetime
+import datetime
 
- from airflow import DAG
- from airflow.operators.empty import EmptyOperator
+from airflow import DAG
+from airflow.operators.empty import EmptyOperator
 
- my_dag = DAG(
-     dag_id="dag_id",
-     start_date=datetime.datetime(2021, 1, 1),
-     schedule="@daily",
- )
- EmptyOperator(task_id="task", dag=my_dag)
+my_dag = DAG(
+    dag_id="dag_id",
+    start_date=datetime.datetime(2021, 1, 1),
+    schedule="@daily",
+)
+EmptyOperator(task_id="task", dag=my_dag)
 ```
-- **@dag decorator**, el cual convierte una funcion en un DAG:
+- Utilizando el **@dag decorator**, el cual convierte una funcion en un generador de DAGs:
 ```python
 import datetime
 
