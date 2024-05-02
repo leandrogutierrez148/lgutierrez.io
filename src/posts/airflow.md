@@ -1,6 +1,6 @@
 ---
 # This is the title of the article
-title: 'Buenos Aires: Good Airflow'
+title: 'Buenos Aires: Good Airflows'
 # You can customize cover image
 cover: /assets/images/pipeline.jpeg
 # This is the icon of the page
@@ -25,10 +25,12 @@ star: true
 
 disableCopy: true
 ---
-Algunas de las funciones principales de un ingeniero de datos son el obtener, transformar y mover información de un punto a otro, sumado esto a las impactantes cantidades de datos que son generadas en la actualidad, se torna imprecindible la estandarización en la definición, implementacion y administración de estos flujos de trabajo, o como solemos llamarles pipelines, compreden un set de tareas a ejecutarse en un cierto orden y con una determinada frecuencia.
+Algunas de las funciones principales de un ingeniero de datos son el obtener, transformar y mover información de un punto a otro, sumado esto a la impactante cantidad de datos que son generadas en la actualidad, se torna imprecindible la estandarización en la definición, implementacion y administración de estos flujos de trabajo, o como solemos llamarles pipelines, compreden un set de tareas a ejecutarse en un cierto orden y con una determinada frecuencia.
 <!-- more -->
 
 Cuando se trata de agendar tareas programadas quizás lo primero que llega a nuestra mente es el famoso servicio Cron de los sistemas Unix, el cual periodicamente y de manera desatendida despierta para ejecutar las tareas que le hayan sido asignadas. Los tiempos modernos arribaron y las necesidades de facilitar el desarrollo, despliegue y monitoreo de nuestras flujos de trabajo arribaron con ellos. Hoy daremos un vistazo a Apache Airflow y sus conceptos clave.
+
+<iframe src="https://leandrogutierrez148.substack.com/embed" width="770" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
 
 ## Airflow
 Airflow, es una plataforma open-source que permite desarrollar, agendar y monitorear tareas programadas, o como ellos mismos se denominan **un orquestador de flujos de trabajo orientado a procesos batch**. Desarrollado en Python, Airflow provee un framework para crear nuestras propios flujos de trabajo (**Workflows**), cuenta además con una amplia gama de integraciones con diversos sistemas, algunos oficiales y otros desarrollados por terceros, los cuales resuelven la mayoría de los casos de uso común.
@@ -201,3 +203,11 @@ Los casos de uso mas común son:
 - Controles de calidad de datos
 - Pre agregaciones
 - Ejecutar acciones remotas contra un servicio
+
+### Conclusiones
+Como hemos visto Airflow nos provee de un framework completo para diseñar e implementar nuestros pipelines de trabajo. Su amplia variedad de Operadores resuelven una gran cantidad de los casos de uso comun y su Taskflow API nos brinda la mayor de las libertades al momento de programar nuestras tareas. Admite un abanico considerable de conectores a diferentes tecnologías, algunos propios y otros desarrollados por terceros, pero vastamente avalados por la comunidad. Su interfaz gráfica es sencilla de interpretar y permitiendonos gestionar rapidamente nuestros trabajos programados. Y su arquitectura distribuida es facilmente escalable según nuestras necesidades.
+
+Denle una mirada y jueguen con la tecnología que seguramente les resultará por demás útil:
+
+[install Airflow](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html#)
+<iframe src="https://leandrogutierrez148.substack.com/embed" width="770" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
