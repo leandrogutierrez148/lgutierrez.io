@@ -52,7 +52,6 @@ Una notebook Jupyter son datos estructurados que represetan el código, la metad
 ![notebook-format.png](/assets/images/notebook-format.png)
 
 ### ¿Cómo se relacionan una notebook Jupyter, su kernel y un entorno virtual?
-![notebook-arch.png](/assets/images/notebook-arch.png)
 
 Antes de entrar en los detalles de la instalación, es importante entender cómo se relacionan la Jupyter notebook, el kernel y el entorno virtual (virtualenv):
 
@@ -94,6 +93,8 @@ Antes de entrar en los detalles de la instalación, es importante entender cómo
   - Proporciona un entorno aislado donde se pueden instalar paquetes y dependencias específicas sin afectar al sistema global.
 
   - El kernel, si fué creado dentro de un virtualenv, utiliza los paquetes y dependencias del entorno.
+
+![notebook-arch.png](/assets/images/notebook-arch.png)
 
 Para ejecutar código de manera interactiva, la notebook debe enviar la petición de ejecución al kernel quien se encargará del procesamiento y disposición de los resultados. A su vez es el kernel el encargado de mantener los estados de las variables declaradas durante la sesión de la notebook.
 
