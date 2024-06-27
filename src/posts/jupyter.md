@@ -47,7 +47,7 @@ Jupyter Notebook provee una aplicación web para la creación y ejecución de nu
 
 ### ¿Que formato tiene una notebook?
 
-Una notebook Jupyter son datos estructurados que represetan el código, la metadata, el contenido enriquecido y los resultados del código. Cuando se guarda en disco, la notebook usa la extensión `.ipynb`, y se estructura en formato `JSON`. Ver the nbformat documentation.
+Una notebook Jupyter son datos estructurados que represetan el código, la metadata, el contenido enriquecido y los resultados del código. Cuando se guarda en disco, la notebook usa la extensión `.ipynb`, y se estructura en formato `JSON`. Ver [the nbformat documentation](https://nbformat.readthedocs.io/en/latest/format_description.html).
 
 ![notebook-format.png](/assets/images/notebook-format.png)
 
